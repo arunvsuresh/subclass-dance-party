@@ -1,4 +1,4 @@
-var makeBlinkyDancer = function(top, left, timeBetweenSteps){
+var batMan = function(top, left, timeBetweenSteps){
 
   makeDancer.call(this,top,left,timeBetweenSteps);
 
@@ -6,22 +6,22 @@ var makeBlinkyDancer = function(top, left, timeBetweenSteps){
   this.setPosition(top,left,timeBetweenSteps);
 };
 
-makeBlinkyDancer.prototype = Object.create(makeDancer.prototype);
+batMan.prototype = Object.create(makeDancer.prototype);
 
-makeBlinkyDancer.prototype.constructor = makeBlinkyDancer;
+batMan.prototype.constructor = batMan;
 
-makeBlinkyDancer.prototype.step = function(){
+batMan.prototype.step = function(){
   var context=this;
   this.$node.toggle();
   var superAlwaysBoundStep=this.step.bind(this);
   setTimeout(superAlwaysBoundStep, context.timeBetweenSteps);
 };
 
-makeBlinkyDancer.prototype.setPosition = function(top, left){
+batMan.prototype.setPosition = function(top, left){
     var styleSettings = {
       top: top,
       left: left,
-      "border-color":"#00ffff"
+      "border-color":"#333"
     };
     this.$node.css(styleSettings);
 };
