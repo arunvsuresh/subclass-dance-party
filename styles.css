@@ -5,6 +5,11 @@ body{
   margin: 0px;
   background-color:#444;
   font-size: 18px;
+  background-image: url("http://thumbs.dreamstime.com/x/party-dance-floor-background-24326791.jpg");
+  background-size:   cover;                      /* <------ */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: #cccccc;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
@@ -21,7 +26,9 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
+  height: 50px;
+  width: 50px;
   border-radius:10px;
   position:absolute;
 }
+

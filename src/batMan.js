@@ -1,4 +1,4 @@
-var batMan = function(top, left, timeBetweenSteps){
+var wolverine = function(top, left, timeBetweenSteps){
 
   makeDancer.call(this,top,left,timeBetweenSteps);
 
@@ -6,22 +6,24 @@ var batMan = function(top, left, timeBetweenSteps){
   this.setPosition(top,left,timeBetweenSteps);
 };
 
-batMan.prototype = Object.create(makeDancer.prototype);
+wolverine.prototype = Object.create(makeDancer.prototype);
 
-batMan.prototype.constructor = batMan;
+wolverine.prototype.constructor = wolverine;
 
-batMan.prototype.step = function(){
+wolverine.prototype.step = function(){
   var context=this;
   this.$node.toggle();
   var superAlwaysBoundStep=this.step.bind(this);
   setTimeout(superAlwaysBoundStep, context.timeBetweenSteps);
 };
 
-batMan.prototype.setPosition = function(top, left){
+wolverine.prototype.setPosition = function(top, left){
     var styleSettings = {
       top: top,
       left: left,
-      "border-color":"#333"
+      "border-color":"#333",
+      background: "url(css/marvel.gif) -50px 0"
     };
+
     this.$node.css(styleSettings);
 };

@@ -15,3 +15,16 @@ spiderMan.prototype.step = function(){
   setTimeout(superAlwaysBoundStep, context.timeBetweenSteps);
   // other effects you can use on a jQuery-wrapped html tag.
 };
+
+
+
+spiderMan.prototype.setPosition = function(top, left){
+    var styleSettings = {
+      top: top,
+      left: left,
+      "border-color":"#333",
+      background: "url(css/marvel.gif) 0 0"
+    };
+
+    this.$node.css(styleSettings);
+};

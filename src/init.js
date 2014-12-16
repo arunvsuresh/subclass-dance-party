@@ -41,3 +41,13 @@ $(document).ready(function(){
   });
 });
 
+var getDistanceTo = function(node1, node2) {
+  var x1 = node1.offsetLeft;
+  var y1 = node1.offsetTop;
+  var x2 = node2.offsetLeft;
+  var y2 = node2.offsetTop;
+  var l1 = (x1 - x2);
+  var l2 = (y1 - y2);
+  var distance = Math.sqrt((l1*l1)+(l2*l2));
+}
+
