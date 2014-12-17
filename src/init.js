@@ -23,12 +23,14 @@ $(document).ready(function(){
         dancers[i].css("top", top + "px");
       }
     });
+
+
     var dancerMakerFunctionName = $(this).data("dancer-maker-function-name");
+    console.log(dancerMakerFunctionName);
 
     // get the maker function for the kind of dancer we're supposed to make
     var dancerMakerFunction = window[dancerMakerFunctionName];
     window.check = dancerMakerFunction;
-    console.log(dancerMakerFunctionName);
     // make a dancer with a random position
 
     var dancer = new dancerMakerFunction(
@@ -36,18 +38,23 @@ $(document).ready(function(){
       $("body").width() * Math.random(),
       Math.random() * 1000
     );
+
+    dancer.$node.on('mouseover',function(){
+      $(this).css('top',"-1000px");
+    });
     window.dancers.push(dancer.$node);
     $('body').append(dancer.$node);
   });
 });
 
 var getDistanceTo = function(node1, node2) {
-  var x1 = node1.offsetLeft;
-  var y1 = node1.offsetTop;
-  var x2 = node2.offsetLeft;
-  var y2 = node2.offsetTop;
+  var x1 = parseInt(node1.css('left'), 10);
+  var y1 = parseInt(node1.css('top'), 10);
+  var x2 = parseInt(node2.css('left'), 10);
+  var y2 = parseInt(node2.css('top'), 10);
   var l1 = (x1 - x2);
   var l2 = (y1 - y2);
   var distance = Math.sqrt((l1*l1)+(l2*l2));
+  return distance;
 }
 
