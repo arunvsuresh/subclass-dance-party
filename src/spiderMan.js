@@ -9,7 +9,7 @@ spiderMan.prototype.constructor = spiderMan;
 
 spiderMan.prototype.step = function(){
   var context=this;
-  this.$node.toggle();
+  //this.$node.toggle();
   var superAlwaysBoundStep=this.step.bind(this);
 
   setTimeout(superAlwaysBoundStep, context.timeBetweenSteps);
